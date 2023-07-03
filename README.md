@@ -1,1 +1,1 @@
-# askomdch
+# askomdch - pet project
