@@ -28,4 +28,17 @@ public class HomePage extends BasePage {
                 .click();
         return new StorePage(driver);
     }
+
+    public HomePage addItemToCart() {
+        getWait5().until(ExpectedConditions.elementToBeClickable(By
+                .xpath("(//a[contains(@href, 'add-to-cart')])[1]")))
+                .click();
+        return this;
+    }
+
+    public CartPage viewCart() {
+        getWait5().until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@title = 'View cart']")))
+                .click();
+        return new CartPage(driver);
+    }
 }

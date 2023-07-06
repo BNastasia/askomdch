@@ -9,6 +9,7 @@ import pages.base.BasePage;
 
 import static common.Config.CLEAR_COOKIES_AND_STORAGE;
 import static common.Config.HOLD_BROWSER_OPEN;
+import static constants.Constants.Urls.HOME_PAGE;
 
 public class BaseTest {
     protected WebDriver driver = CommonActions.createDriver();

@@ -15,8 +15,20 @@ public class StoreTest extends BaseTest {
                 .clickShopNowAndGoToStore()
                 .clickAddToCart()
                 .clickViewCart()
-                .checkItem();
+                .checkItemIsVisible();
 
         Assert.assertTrue(itemExist);
+    }
+
+    @Test
+    public void deleteItemFromCart() {
+        basePage.open(HOME_PAGE);
+        Boolean itemIsDeleted =  new HomePage(driver)
+                .addItemToCart()
+                .viewCart()
+                .deleteItem()
+                .checkItemIsDeleted();
+
+        Assert.assertTrue(itemIsDeleted);
     }
 }
