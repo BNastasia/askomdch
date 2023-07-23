@@ -11,7 +11,7 @@ import static common.Config.CLEAR_COOKIES_AND_STORAGE;
 import static common.Config.HOLD_BROWSER_OPEN;
 
 public abstract class BaseTest {
-    private WebDriver driver = CommonActions.createDriver();
+    private final WebDriver driver = CommonActions.createDriver();
     protected BasePage basePage = new BasePage(getDriver());
 
     public WebDriver getDriver() {

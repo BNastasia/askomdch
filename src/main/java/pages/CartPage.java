@@ -15,7 +15,7 @@ public class CartPage extends BasePage {
     }
 
     public Boolean checkItemIsVisible() {
-        getWait(5).until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".cart_item")))
+        getWait(4).until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".cart_item")))
                 .isDisplayed();
         return true;
     }
