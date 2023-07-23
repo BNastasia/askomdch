@@ -5,12 +5,10 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import pages.base.BasePage;
 
 import static common.Config.CLEAR_COOKIES_AND_STORAGE;
 import static common.Config.HOLD_BROWSER_OPEN;
-import static constants.Constants.Urls.HOME_PAGE;
 
 public abstract class BaseTest {
     private WebDriver driver = CommonActions.createDriver();
