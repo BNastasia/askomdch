@@ -1,6 +1,5 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -18,14 +17,14 @@ public class StorePage extends BasePage {
     }
 
     public StorePage clickAddToCart() {
-        getWait5().until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@href='?add-to-cart=1215']")))
+        getWait(5).until(ExpectedConditions.elementToBeClickable(buttonAddToCard))
                 .click();
         return this;
     }
 
     public CartPage clickViewCart() {
-        getWait5().until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@title='View cart']")))
+        getWait(5).until(ExpectedConditions.elementToBeClickable(viewCart))
                 .click();
-        return new CartPage(driver);
+        return new CartPage(getDriver());
     }
 }

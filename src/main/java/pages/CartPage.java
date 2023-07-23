@@ -15,18 +15,18 @@ public class CartPage extends BasePage {
     }
 
     public Boolean checkItemIsVisible() {
-        getWait5().until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".cart_item")))
+        getWait(5).until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".cart_item")))
                 .isDisplayed();
         return true;
     }
 
     public Boolean checkItemIsDeleted() {
-        return getWait5().until(ExpectedConditions.textToBePresentInElementLocated(By
+        return getWait(5).until(ExpectedConditions.textToBePresentInElementLocated(By
                 .xpath("//p[contains(@class, 'cart-empty')]"), "Your cart is currently empty."));
     }
 
     public CartPage deleteItem() {
-        getWait5().until(ExpectedConditions.elementToBeClickable(By.cssSelector(".remove"))).click();
+        getWait(5).until(ExpectedConditions.elementToBeClickable(By.cssSelector(".remove"))).click();
         return this;
     }
 

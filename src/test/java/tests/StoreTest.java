@@ -11,7 +11,7 @@ public class StoreTest extends BaseTest {
     @Test
     public void addItemToCard() {
         basePage.open(HOME_PAGE);
-        Boolean itemExist = new HomePage(driver)
+        Boolean itemExist = new HomePage(getDriver())
                 .clickShopNowAndGoToStore()
                 .clickAddToCart()
                 .clickViewCart()
@@ -23,7 +23,7 @@ public class StoreTest extends BaseTest {
     @Test
     public void deleteItemFromCart() {
         basePage.open(HOME_PAGE);
-        Boolean itemIsDeleted =  new HomePage(driver)
+        Boolean itemIsDeleted =  new HomePage(getDriver())
                 .addItemToCart()
                 .viewCart()
                 .deleteItem()

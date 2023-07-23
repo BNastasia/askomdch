@@ -1,6 +1,5 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,6 +13,12 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//a[@href = '/store']")
     private WebElement buttonShopNow;
 
+    @FindBy(xpath = "(//a[contains(@href, 'add-to-cart')])[1]")
+    private WebElement addItem;
+
+    @FindBy(xpath = "//a[@title = 'View cart']")
+    private WebElement viewCart;
+
     public HomePage(WebDriver driver) {
         super(driver);
     }
@@ -24,21 +29,18 @@ public class HomePage extends BasePage {
     }
 
     public StorePage clickShopNowAndGoToStore() {
-        getWait5().until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@href = '/store']")))
+        getWait(5).until(ExpectedConditions.elementToBeClickable(buttonShopNow))
                 .click();
-        return new StorePage(driver);
+        return new StorePage(getDriver());
     }
 
     public HomePage addItemToCart() {
-        getWait5().until(ExpectedConditions.elementToBeClickable(By
-                .xpath("(//a[contains(@href, 'add-to-cart')])[1]")))
-                .click();
+        getWait(5).until(ExpectedConditions.elementToBeClickable(addItem)).click();
         return this;
     }
 
     public CartPage viewCart() {
-        getWait5().until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@title = 'View cart']")))
-                .click();
-        return new CartPage(driver);
+        getWait(5).until(ExpectedConditions.elementToBeClickable(viewCart)).click();
+        return new CartPage(getDriver());
     }
 }

@@ -2,6 +2,7 @@ package constants;
 
 public class Constants {
     public static class Urls {
-        public static final String HOME_PAGE = "https://askomdch.com/";
+//        public static final String HOME_PAGE = "https://askomdch.com/";
+        public static final String HOME_PAGE = "https://openweathermap.org/";
     }
 }
