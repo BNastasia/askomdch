@@ -29,6 +29,4 @@ public class CartPage extends BasePage {
         getWait(5).until(ExpectedConditions.elementToBeClickable(By.cssSelector(".remove"))).click();
         return this;
     }
-
-
 }

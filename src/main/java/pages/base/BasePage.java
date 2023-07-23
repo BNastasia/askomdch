@@ -13,8 +13,6 @@ public class BasePage {
     private final WebDriver driver;
     private WebDriverWait wait;
 
-    private long time;
-
     public BasePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
