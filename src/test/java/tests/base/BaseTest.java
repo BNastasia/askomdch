@@ -1,21 +1,27 @@
 package tests.base;
 
 import common.CommonActions;
+import constants.Constants;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
-import pages.base.BasePage;
+import pages.HomePage;
 
 import static common.Config.CLEAR_COOKIES_AND_STORAGE;
 import static common.Config.HOLD_BROWSER_OPEN;
 
 public abstract class BaseTest {
     private final WebDriver driver = CommonActions.createDriver();
-    protected BasePage basePage = new BasePage(getDriver());
+    private String BASE_URL = Constants.getBaseUrl();
 
     public WebDriver getDriver() {
         return driver;
+    }
+
+    public HomePage openBaseUrl() {
+        getDriver().get(BASE_URL);
+        return new HomePage(getDriver());
     }
 
     @AfterTest

@@ -5,12 +5,10 @@ import org.testng.annotations.Test;
 import pages.HomePage;
 import tests.base.BaseTest;
 
-import static constants.Constants.Urls.HOME_PAGE;
-
 public class StoreTest extends BaseTest {
     @Test
     public void addItemToCard() {
-        basePage.open(HOME_PAGE);
+        openBaseUrl();
         Boolean itemExist = new HomePage(getDriver())
                 .clickShopNowAndGoToStore()
                 .clickAddToCart()
@@ -22,7 +20,7 @@ public class StoreTest extends BaseTest {
 
     @Test
     public void deleteItemFromCart() {
-        basePage.open(HOME_PAGE);
+        openBaseUrl();
         Boolean itemIsDeleted =  new HomePage(getDriver())
                 .addItemToCart()
                 .viewCart()

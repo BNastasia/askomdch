@@ -8,8 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-
-public class BasePage {
+public abstract class BasePage {
     private final WebDriver driver;
     private WebDriverWait wait;
 
@@ -19,10 +18,6 @@ public class BasePage {
     }
 
     public WebDriver getDriver() {return driver;}
-
-    public void open(String url) {
-        driver.get(url);
-    }
 
     protected WebDriverWait getWait(long time) {
         if (wait == null) {

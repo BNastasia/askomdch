@@ -1,7 +1,9 @@
 package constants;
 
 public class Constants {
-    public static class Urls {
-        public static final String HOME_PAGE = "https://askomdch.com/";
+        private static final String BASE_URL = "https://askomdch.com/";
+
+        public static String getBaseUrl() {
+            return BASE_URL;
+        }
     }
-}
